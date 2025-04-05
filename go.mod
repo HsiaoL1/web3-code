@@ -1,3 +1,3 @@
-module github.com/HsiaoL1/web3-code
+module github.com/hsiaocz/web3-code
 
-go 1.24.1
+go 1.19
