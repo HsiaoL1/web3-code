@@ -37,7 +37,7 @@ func main() {
 	// Middleware
 	// 启动服务器
 	go func() {
-		if err := app.Listen(":" + port); err != nil {
+		if err := app.Listen(port); err != nil {
 			logrus.WithFields(logrus.Fields{
 				"error": err,
 			}).Fatal("Failed to start server")
