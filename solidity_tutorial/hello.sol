@@ -32,7 +32,7 @@ contract HelloWorld {
 
 // 如何运行
 // 1. 安装 Solidity 编译器（solc）
-// 2. 使用 solc 编译合约：solc --bin --abi hello.sol
+// 2. 使用 solc 编译合约：solcjs --bin --abi hello.sol
 // 3. 部署合约到以太坊网络（可以使用 Remix IDE 或 Truffle 等工具）
 // 4. 调用 getGreeting 函数获取问候语
 // 5. 可以使用 Web3.js 或 Ethers.js 等库与合约进行交互
