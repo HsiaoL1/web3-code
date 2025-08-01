@@ -2,7 +2,6 @@
 // 这是一个简单的 ERC20 代币合约示例
 pragma solidity ^0.8.20;
 
-
 // SimpleToken 继承自 OpenZeppelin 的 ERC20 合约
 // 这意味着 SimpleToken 将具有 ERC20 代币的所有标准功能
 contract SimpleToken {
@@ -25,11 +24,19 @@ contract SimpleToken {
     // Transfer 事件在代币转移时触发
     event Transfer(address indexed from, address indexed to, uint256 value);
     // Approval 事件在代币授权时触发
-    event Approval(address indexed owner, address indexed spender, uint256 value);
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint256 value
+    );
 
     // -- 构造函数
     // 构造函数在合约部署时执行一次
-    constructor(string memory _name, string memory _symbol, uint256 _initialSupply) {
+    constructor(
+        string memory _name,
+        string memory _symbol,
+        uint256 _initialSupply
+    ) {
         name = _name;
         symbol = _symbol;
         totalSupply = _initialSupply * (10 ** uint256(decimals)); // 考虑小数位
@@ -45,7 +52,6 @@ contract SimpleToken {
         balances[msg.sender] -= value;
         balances[to] += value;
 
-        // emit 是什么意思？
         // emit 关键字用于触发事件
         // 事件可以在区块链上记录重要的状态变化
         emit Transfer(msg.sender, to, value);
@@ -63,7 +69,11 @@ contract SimpleToken {
     }
 
     // transferFrom 函数用于从一个地址转移代币到另一个地址
-    function transferFrom(address from, address to, uint256 value) public returns (bool) {
+    function transferFrom(
+        address from,
+        address to,
+        uint256 value
+    ) public returns (bool) {
         require(from != address(0), "Invalid from address");
         require(to != address(0), "Invalid to address");
         require(balances[from] >= value, "Insufficient balance");
@@ -77,4 +87,3 @@ contract SimpleToken {
         return true;
     }
 }
-
