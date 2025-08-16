@@ -1,149 +1,214 @@
+# Rust 语言详细教程
 
-# Rust 语言教程
+本仓库包含一套完整的 Rust 语言学习教程，从基础语法到高级特性，涵盖了 Rust 编程的各个方面。
 
-本教程旨在提供对Rust语言的全面介绍，重点介绍其核心概念和语法。
+## 教程结构
 
-## 什么是 Rust？
+### 📚 基础篇
 
-Rust 是一种多范式、通用的编程语言，专注于性能、类型安全和并发性。它在语法上类似于 C++，但旨在提供更好的内存安全性，同时保持高性能。Rust 由 Mozilla Research 开发，并于 2015 年首次发布。
+- **[01_rust_basics.md](01_rust_basics.md)** - Rust 基础语法
+  - 变量和数据类型
+  - 函数和控制流
+  - 注释和文档
+  - 基础练习
 
-## 核心特性
+### 🔒 所有权系统
 
-*   **内存安全**: Rust 的所有权系统和借用检查器在编译时强制执行内存安全保证。这可以防止出现空指针、悬垂指针和数据竞争等常见错误。
-*   **性能**: Rust 速度快且内存效率高。由于没有运行时或垃圾收集器，它可以为性能关键型服务提供支持，在嵌入式设备上运行，并且可以轻松地与其他语言集成。
-*   **并发**: Rust 的所有权和类型系统是其处理并发的强大工具。该语言鼓励使用消息传递来进行线程之间的通信，从而更容易编写正确的并发代码。
-*   **可靠性**: Rust 丰富的类型系统和所有权模型保证了内存安全和线程安全，并且它还使你能够在编译时消除许多类别的错误。
+- **[02_ownership.md](02_ownership.md)** - 所有权与借用
+  - 所有权规则
+  - 引用与借用
+  - 切片类型
+  - 内存管理
 
-## 语法基础
+### 🏗️ 数据结构
 
-### 变量和可变性
+- **[03_structs_methods.md](03_structs_methods.md)** - 结构体与方法
+  - 结构体定义和使用
+  - 方法语法
+  - 关联函数
+  - 实践项目
 
-在 Rust 中，变量默认是不可变的。你可以使用 `mut` 关键字使变量可变。
+### 🎯 模式匹配
 
-```rust
-let x = 5; // 不可变
-let mut y = 10; // 可变
-y = 11;
+- **[04_enums_pattern_matching.md](04_enums_pattern_matching.md)** - 枚举与模式匹配
+  - 枚举定义
+  - Option 和 Result
+  - match 表达式
+  - if let 语法
+
+### 📦 模块系统
+
+- **[05_modules_packages.md](05_modules_packages.md)** - 模块与包管理
+  - 包和 Crate
+  - 模块系统
+  - use 关键字
+  - 工作空间
+
+### 📊 集合类型
+
+- **[06_collections.md](06_collections.md)** - 集合类型详解
+  - Vec 动态数组
+  - String 字符串
+  - HashMap 哈希映射
+  - 其他集合类型
+
+### ❌ 错误处理
+
+- **[07_error_handling.md](07_error_handling.md)** - 错误处理机制
+  - panic! 与不可恢复错误
+  - Result 与可恢复错误
+  - 错误传播
+  - 自定义错误类型
+
+### 🧬 高级类型系统
+
+- **[08_generics_traits_lifetimes.md](08_generics_traits_lifetimes.md)** - 泛型、Trait 和生命周期
+  - 泛型编程
+  - Trait 系统
+  - 生命周期注解
+  - 高级 Trait 用法
+
+### ⚡ 并发编程
+
+- **[09_concurrency.md](09_concurrency.md)** - 并发与并行
+  - 线程编程
+  - 消息传递
+  - 共享状态
+  - 同步原语
+
+### 🚀 高级特性
+
+- **[10_advanced_features.md](10_advanced_features.md)** - 高级特性
+  - 不安全 Rust
+  - 高级 Trait
+  - 高级类型
+  - 宏编程
+
+## 特色内容
+
+### 🎯 实践项目
+
+每个章节都包含完整的实践项目：
+
+- 温度转换器和斐波那契数列
+- 图书管理系统
+- 学生成绩管理系统
+- 简单计算器
+- 并发下载器
+- 内存池分配器
+
+### 💡 核心概念详解
+
+- **所有权系统**：Rust 最独特的特性，确保内存安全
+- **类型系统**：强类型系统防止常见编程错误
+- **并发安全**：编译时防止数据竞争
+- **零成本抽象**：高级特性不带来运行时开销
+
+### 🔧 开发工具
+
+- **Cargo**：包管理和构建工具
+- **Rustfmt**：代码格式化工具
+- **Clippy**：代码检查和建议工具
+
+## 学习路径
+
+### 初学者路径 (1-4 周)
+
+1. Rust 基础 → 所有权系统
+2. 结构体与方法 → 枚举与模式匹配
+3. 模块系统 → 集合类型
+4. 错误处理
+
+### 进阶路径 (5-8 周)
+
+1. 泛型、Trait 和生命周期
+2. 并发编程
+3. 高级特性
+
+### 实践建议
+
+- 📝 每章完成后尝试练习题
+- 🚀 运行所有示例代码
+- 🔨 动手实现项目
+- 📚 阅读官方文档补充
+
+## 环境设置
+
+### 安装 Rust
+
+```bash
+# 安装 Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# 验证安装
+rustc --version
+cargo --version
 ```
 
-### 数据类型
+### 创建新项目
 
-Rust 是一种静态类型语言，这意味着它必须在编译时知道所有变量的类型。一些基本数据类型包括：
+```bash
+# 创建二进制项目
+cargo new my_project
 
-*   **标量类型**:
-    *   整数 (`i8`, `i16`, `i32`, `i64`, `i128`, `isize`, `u8`, `u16`, `u32`, `u64`, `u128`, `usize`)
-    *   浮点数 (`f32`, `f64`)
-    *   布尔值 (`bool`)
-    *   字符 (`char`)
-*   **复合类型**:
-    *   元组 (`(i32, f64, u8)`)
-    *   数组 (`[i32; 5]`)
+# 创建库项目
+cargo new my_library --lib
 
-### 函数
-
-函数使用 `fn` 关键字声明。
-
-```rust
-fn add(a: i32, b: i32) -> i32 {
-    a + b
-}
+# 运行项目
+cargo run
 ```
 
-### 控制流
+## 为什么选择 Rust？
 
-*   **`if` 表达式**:
+### 🛡️ 内存安全
 
-```rust
-let number = 3;
+- 编译时防止空指针、缓冲区溢出
+- 无需垃圾回收器
+- 所有权系统确保内存正确管理
 
-if number < 5 {
-    println!("条件为 true");
-} else {
-    println!("条件为 false");
-}
-```
+### ⚡ 高性能
 
-*   **循环**: Rust 有三种循环：`loop`、`while` 和 `for`。
+- 零成本抽象
+- 无运行时开销
+- 可与 C/C++ 媲美的性能
 
-```rust
-// loop
-loop {
-    println!("again!");
-    break;
-}
+### 🔒 并发安全
 
-// while
-let mut number = 3;
-while number != 0 {
-    println!("{}!", number);
-    number -= 1;
-}
+- 类型系统防止数据竞争
+- 编译时并发检查
+- 优雅的并发编程模型
 
-// for
-let a = [10, 20, 30, 40, 50];
-for element in a.iter() {
-    println!("值为：{}", element);
-}
-```
+### 🌍 跨平台
 
-### 所有权
+- 支持多种操作系统
+- 从嵌入式到 Web 服务器
+- 优秀的包管理生态
 
-所有权是 Rust 最独特的特性。它使 Rust 能够在没有垃圾收集器的情况下保证内存安全。
+## 应用领域
 
-*   **规则**:
-    1.  Rust 中的每个值都有一个变量，称为其所有者。
-    2.  一次只能有一个所有者。
-    3.  当所有者超出作用域时，该值将被删除。
+- **系统编程**：操作系统、驱动程序
+- **Web 开发**：高性能 Web 服务
+- **网络编程**：网络协议、分布式系统
+- **游戏开发**：游戏引擎、实时系统
+- **区块链**：加密货币、智能合约
+- **嵌入式**：物联网、微控制器
 
-### 结构体
+## 学习资源
 
-结构体是一种将多个相关值组合在一起的自定义数据类型。
+### 官方资源
 
-```rust
-struct User {
-    username: String,
-    email: String,
-    sign_in_count: u64,
-    active: bool,
-}
-```
+- [Rust 官方网站](https://www.rust-lang.org/)
+- [The Rust Programming Language Book](https://doc.rust-lang.org/book/)
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
 
-### 枚举
+### 练习平台
 
-枚举允许你通过列举其可能的成员来定义一个类型。
+- [Rustlings](https://github.com/rust-lang/rustlings)
+- [Exercism Rust Track](https://exercism.org/tracks/rust)
 
-```rust
-enum IpAddrKind {
-    V4,
-    V6,
-}
-```
+### 社区
 
-### 错误处理
+- [Rust 用户论坛](https://users.rust-lang.org/)
+- [Rust 官方 Discord](https://discord.gg/rust-lang)
 
-Rust 使用 `Result<T, E>` 枚举进行可恢复的错误处理。
-
-```rust
-use std::fs::File;
-
-fn main() {
-    let f = File::open("hello.txt");
-
-    let f = match f {
-        Ok(file) => file,
-        Err(error) => {
-            panic!("打开文件时出现问题：{:?}", error)
-        },
-    };
-}
-```
-
-## 工具
-
-*   **Cargo**: Rust 的构建工具和包管理器。
-*   **Rustfmt**: 一个用于格式化 Rust 代码的工具。
-*   **Clippy**: 一个用于捕捉常见错误和改进 Rust 代码的 linter。
-
-## 结论
-
-Rust 是一种功能强大的语言，为现代系统编程提供了独特的特性组合。其对安全性、性能和并发性的关注使其成为各种应用程序的绝佳选择。
+开始你的 Rust 学习之旅吧！🦀
